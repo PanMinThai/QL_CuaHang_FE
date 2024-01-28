@@ -1,0 +1,42 @@
+<div class="container-sm">
+    <h1 class="title">Xóa Thẻ thành viên</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="deleteTTV()" novalidate>
+        <!-- Thêm thuộc tính 'novalidate' để ngăn chặn kiểm tra tự động của trình duyệt -->
+        <div class="modal-body">
+            
+                <div class="form-floating mb-3">
+                    <label for="sdt">Số điện thoại</label>
+                    <br><br>
+                    <div>
+
+                        <input type="text" class="form-control" id="sdt" [(ngModel)]="a.sdt" name="sdt" required
+                            readonly>
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="name">Điểm tích lũy</label>
+                    <br><br>
+                    <div>
+                        <input type="number" class="form-control" id="diemtichluy" [(ngModel)]="a.diemtichluy" name="diemtichluy" required
+                            readonly>
+                    </div>
+    
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="name">Điểm đã dùng</label>
+                    <br><br>
+                    <div>
+                        <input type="number" class="form-control" id="diemdadung" [(ngModel)]="a.diemdadung" name="diemdadung" required
+                            readonly>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+                <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Xóa</button>
+                <!-- Sử dụng thuộc tính [disabled] để ngăn chặn việc nhấp vào nút khi form không hợp lệ -->
+            </div>
+        </div>
+    </form>
+</div>

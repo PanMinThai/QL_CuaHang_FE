@@ -1,0 +1,46 @@
+<div class="down">
+<a type="button" class="btn btn-dark" routerLink="/app-addsp">
+    <i class="fa-solid fa-plus"></i> Thêm Sản Phẩm
+  </a>
+  <table class="table table-striped mt-5">
+  
+    <thead class="thead-dark">
+      <tr>
+        <!-- Sửa các thẻ <th> để đảm bảo chúng cũng được thiết kế theo Bootstrap -->
+        <th scope="col">Số thứ tự</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Giá vốn</th>
+        <th scope="col">Giá bán</th>
+        <th scope="col">Đơn vị</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col" colspan="2" class="text-center">Tùy chọn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sửa cú pháp *ngFor để thêm 'let i = index' và thêm 'scope="row"' cho thẻ <td> -->
+      <tr *ngFor="let sp of list |paginate: { itemsPerPage: itemsPage, currentPage: firstPage }; let i = index">
+        <td>{{i +dem+ 1}}</td>
+        <td scope="row">{{ sp.ten }}</td>
+        <td>{{ sp.giavon }}</td>
+        <td>{{ sp.giaban }}</td>
+        <td>{{ sp.donvi }}</td>
+        <td>{{ sp.soluong }}</td>
+        <td>
+          <a type="button" class="btn btn-outline-dark" [routerLink]="['/app-detailsp', sp.id]">
+            <i class="fa-solid fa-eye"></i> Xem
+          </a>  
+  
+        <td>
+          <a type="button" class="btn btn-outline-dark" [routerLink]="['/app-deletesp', sp.id]">
+            <i class="fa-solid fa-eye"></i> Xóa
+        </a>
+  
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination center-pagination">
+    <pagination-controls (pageChange)="firstPage = $event"> </pagination-controls>
+  </div>
+</div>
+<p *ngIf="!list || list.length <=0">Không tìm thấy dữ liệu</p>

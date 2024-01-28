@@ -1,0 +1,57 @@
+<div class="container-sm">
+    <h1 class="title">Thêm mới nhà xuất bản</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="deletesp()" novalidate>
+        <!-- Thêm thuộc tính 'novalidate' để ngăn chặn kiểm tra tự động của trình duyệt -->
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <label for="name">Tên sản phẩm</label>
+                <br><br>
+                <div>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="sp.ten" name="tennhaxb" required
+                        readonly>
+                </div>
+
+            </div>
+            <div class="form-floating mb-3">
+                <label for="sdt">Giá vốn</label>
+                <br><br>
+                <div>
+
+                    <input type="number" class="form-control" id="giavon" [(ngModel)]="sp.giavon" name="giavon" required
+                        readonly>
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="note">Giá bán</label>
+                    <br><br>
+                    <div>
+                        <input type="number" class="form-control" id="giaban" [(ngModel)]="sp.giaban" name="giaban"
+                            required readonly>
+                    </div>
+
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="note">Số lượng</label>
+                    <br><br>
+                    <div>
+                        <input type="number" class="form-control" id="soluong" [(ngModel)]="sp.soluong" name="soluong"
+                            required readonly>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="note">Đơn vị</label>
+                    <br><br>
+                    <div>
+                        <input type="text" class="form-control" id="donvi" [(ngModel)]="sp.donvi" name="donvi" required
+                            readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+                <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Xóa</button>
+                <!-- Sử dụng thuộc tính [disabled] để ngăn chặn việc nhấp vào nút khi form không hợp lệ -->
+            </div>
+        </div>
+    </form>
+</div>

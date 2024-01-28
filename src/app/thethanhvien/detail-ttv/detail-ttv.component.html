@@ -1,0 +1,36 @@
+
+<div class="container-md">
+    <h1 class="title">Thông tin nhà sản xuất</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="detailTTV()" novalidate>
+        <!-- Thêm thuộc tính 'novalidate' để ngăn chặn kiểm tra tự động của trình duyệt -->
+        <div class="modal-body">
+            
+            <div class="form-floating mb-3">
+                <label for="name">Số điện thoại</label>
+                <br><br>
+                <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại" [(ngModel)]="a.sdt" 
+                    name="sdt" required>
+            </div>
+            <div class="form-floating mb-3">
+                <label for="name">Điểm tích lũy</label>
+                <br><br>
+                <input type="number" class="form-control" id="diemtichluy"  [(ngModel)]="a.diemtichluy"
+                    name="diemtichluy" required readonly>
+                
+            </div>
+            <div class="form-floating mb-3">
+                <label for="name">Tiền điểm đã dùng</label>
+                <br><br>
+                <input type="number" class="form-control" id="diemdadung" [(ngModel)]="a.diemdadung"
+                    name="diemdadung" required readonly>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+            <button type="submit" class="btn btn-danger" (click)="deleteTTV()">Xóa</button>
+            <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Lưu thay đổi</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+
+<div class="container-md">
+    <h1 class="title">Thông tin nhà sản xuất</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="detailncc()" novalidate>
+        <!-- Thêm thuộc tính 'novalidate' để ngăn chặn kiểm tra tự động của trình duyệt -->
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <label for="name">Tên sản phẩm</label>
+                <br><br>
+                <input type="text" class="form-control" id="ten" placeholder="Nhập tên" [(ngModel)]="EditDeletencc.ten"
+                    name="ten" required>
+                
+            </div>
+            <div class="form-floating mb-3">
+                <label for="name">Số điện thoại</label>
+                <br><br>
+                <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại" [(ngModel)]="EditDeletencc.sdt" 
+                    name="sdt" required>
+            </div>
+            <div class="form-floating mb-3">
+                <label for="name">Tiền nhập</label>
+                <br><br>
+                <input type="number" class="form-control" id="tn" [(ngModel)]="EditDeletencc.tiennhap"
+                    name="tn" required readonly>
+            </div>
+            <div class="form-floating mb-3">
+                <label for="name">Tiền thanh toán</label>
+                <br><br>
+                <input type="number" class="form-control" id="ttt"  [(ngModel)]="EditDeletencc.tiendathanhtoan"
+                    name="ttt" required readonly>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+            <button type="submit" class="btn btn-danger" (click)="deletencc()">Xóa</button>
+            <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Lưu thay đổi</button>
+        </div>
+    </form>
+</div>

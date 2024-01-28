@@ -1,0 +1,41 @@
+
+<div class="container-md">
+    <h1 class="title">Thông tin sản phẩm</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="suaSP()" novalidate>
+        <!-- Thêm thuộc tính 'novalidate' để ngăn chặn kiểm tra tự động của trình duyệt -->
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Nhập tên" [(ngModel)]="EditDeleteSP.ten"
+                    name="tennhaxb" required>
+                <label for="name">Tên sản phẩm</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="giavon" placeholder="Nhập giá vốn" [(ngModel)]="EditDeleteSP.giavon" 
+                    name="giavon" required>
+                <label for="sdt">Giá vốn</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="giaban" placeholder="Nhập giá bán" [(ngModel)]="EditDeleteSP.giaban"
+                    name="giaban" required>
+                <label for="note">Giá bán</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="soluong" placeholder="Nhập số lượng" [(ngModel)]="EditDeleteSP.soluong"
+                    name="soluong" required>
+                <label for="note">Số lượng</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="donvi" placeholder="Nhập đơn vị" [(ngModel)]="EditDeleteSP.donvi"
+                    name="donvi" required>
+                <label for="note">Đơn vị</label>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+            <button type="submit" class="btn btn-danger" (click)="xoaSP()">Xóa</button>
+            <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Lưu thay đổi</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="container-sm">
+    <h1 class="title">Thêm sản phẩm</h1>
+    <br>
+    <form #form="ngForm" (ngSubmit)="addsp()" novalidate>
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Nhập tên" [(ngModel)]="sp.ten"
+                    name="tennhaxb" required>
+                <label for="name">Tên sản phẩm</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="giavon" placeholder="Nhập giá vốn" [(ngModel)]="sp.giavon" 
+                    name="giavon" required>
+                <label for="sdt">Giá vốn</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="giaban" placeholder="Nhập giá bán" [(ngModel)]="sp.giaban"
+                    name="giaban" required>
+                <label for="note">Giá bán</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="soluong" placeholder="Nhập số lượng" [(ngModel)]="sp.soluong"
+                    name="soluong" required>
+                <label for="note">Số lượng</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="donvi" placeholder="Nhập đơn vị" [(ngModel)]="sp.donvi"
+                    name="donvi" required>
+                <label for="note">Đơn vị</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-outline-dark" (click)="goBack()">Hủy</a>
+            <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Lưu thay đổi</button>
+            <!-- Sử dụng thuộc tính [disabled] để ngăn chặn việc nhấp vào nút khi form không hợp lệ -->
+        </div>
+    </form>
+</div>
